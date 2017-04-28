@@ -4,13 +4,15 @@
   "description": "Web App Dev Environment",
   "scripts": {
     "prestart": "babel-node scripts/start_message.js",
-    "start": "npm-run-all --parallel security-check start-server lint:watch",
+    "start": "npm-run-all --parallel security-check start-server lint:watch test:watch",
     "start-server": "babel-node scripts/server.js",
     "lint": "esw webpack.config.* src scripts --color",
     "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
-    "share": "npm-run-all --parallel start-server localtunnel"
+    "share": "npm-run-all --parallel start-server localtunnel",
+    "test": "mocha --reporter progress scripts/test.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Developer Name",
   "license": "MIT",
