@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Web App Dev Environment",
   "scripts": {
+    "prestart": "node scripts/start_message.js",
     "start": "node scripts/server.js"
   },
   "author": "Developer Name",
