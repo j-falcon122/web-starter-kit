@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Web App Dev Environment",
   "scripts": {
-    "prestart": "node scripts/start_message.js",
+    "prestart": "babel-node scripts/start_message.js",
     "start": "npm-run-all --parallel security-check start-server",
-    "start-server": "node scripts/server.js",
+    "start-server": "babel-node scripts/server.js",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel start-server localtunnel"
