@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 50670360,
+      "name": "Ergonomic Metal Sausages",
+      "desc": "Keyboard"
+    },
+    {
+      "id": 15288290,
+      "name": "Intelligent Rubber Gloves",
+      "desc": "Bacon"
+    },
+    {
+      "id": 89810753,
+      "name": "Rustic Fresh Pizza",
+      "desc": "Tuna"
+    }
+  ]
+}

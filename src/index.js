@@ -1,5 +1,31 @@
 import './index.css';
+import {getProducts, deleteProduct} from './api/products';
 
-// const msg = "Traincube";
-// debugger;
-// console.log(`${msg} - Web Challenge Spring 2017`);
+getProducts().then(result => {
+
+  let prods = "";
+
+  result.forEach(prod => {
+    prods += `<tr>
+    <td><a href="#" data-id="${prod.id}" class="deleteProduct">Delete</a></td>
+    <td>${prod.id}</td>
+    <td>${prod.name}</td>
+    <td>${prod.desc}</td>
+    </tr>
+    `
+  });
+
+  global.document.getElementById('products').innerHTML = prods;
+
+  const deleteLinks = global.document.getElementsByClassName('deleteProduct');
+
+  Array.from(deleteLinks, link => {
+    link.onclick = function(event) {
+      const element = event.target;
+      event.preventDefault();
+      deleteProduct(element.attributes["data-id"].value);
+      const row = element.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    };
+  });
+});
