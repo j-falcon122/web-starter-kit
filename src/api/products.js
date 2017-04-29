@@ -4,7 +4,7 @@ import getBaseUrl from './base_url';
 const baseUrl = getBaseUrl();
 
 export function getProducts() {
-  return get('products');
+  return get('products.json');
 }
 
 export function deleteProduct(id) {

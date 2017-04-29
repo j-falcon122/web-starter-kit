@@ -1,7 +1,7 @@
 export const schema = {
   "type": "object",
   "properties": {
-    "products": {
+    "products.json": {
       "type": "array",
       "minItems": 3,
       "maxItems": 5,

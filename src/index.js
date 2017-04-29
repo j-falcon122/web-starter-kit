@@ -6,13 +6,15 @@ getProducts().then(result => {
   let prods = "";
 
   result.forEach(prod => {
-    prods += `<tr>
-    <td><a href="#" data-id="${prod.id}" class="deleteProduct">Delete</a></td>
-    <td>${prod.id}</td>
-    <td>${prod.name}</td>
-    <td>${prod.desc}</td>
-    </tr>
-    `
+    if (prod) {
+      prods += `<tr>
+      <td><a href="#" data-id="${prod.id}" class="deleteProduct">Delete</a></td>
+      <td>${prod.id}</td>
+      <td>${prod.name}</td>
+      <td>${prod.desc}</td>
+      </tr>
+      `
+    }
   });
 
   global.document.getElementById('products').innerHTML = prods;
